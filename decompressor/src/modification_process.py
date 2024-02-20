@@ -52,19 +52,27 @@ class MODIFICATION_PROCESS_CLASS():
             config_data:dict = json.load(json_file)
         assembly_object = ASSEMBLY_CLASS()
         if(config_data["DISABLE_ANTI_TAMPERING"]):
+            print("Disabling Anti-Tampering...")
             assembly_object.disable_anti_tamper()
         if(config_data["PATCH_YUM_YUM_CRASH_FIX"]):
+            print("Patching Yum-Yum Crash Fix...")
             assembly_object.patch_yum_yum_crash_fix()
         if(config_data["BOOT_TO_FILE_SELECT"]):
+            print("Boot To file Select...")
             assembly_object.boot_to_file_select()
         if(config_data["SKIP_JIGGY_JIG"]):
+            print("Skip Jiggy Jig...")
             assembly_object.skip_jiggy_jig()
         if(config_data["ENABLE_FALLPROOF"]):
+            print("Enable Fallproof...")
             assembly_object.enable_fallproof()
         if(config_data["ENABLE_EXIT_TO_WITCHS_LAIR"]):
+            print("Enable Exit To Witch's Lair...")
             assembly_object.enable_exit_to_witchs_lair()
         if(config_data["START_GAME_WITH_ALL_MOVES"]):
+            print("Start Game With All Moves...")
             assembly_object.start_file_with_all_moves()
+        print("Setting World Costs...")
         assembly_object.set_jigsaw_puzzle_costs(jigsaw_puzzle_list=[
             config_data["WORLD_PUZZLE_COSTS"]["MUMBOS_MOUNTAIN"],
             config_data["WORLD_PUZZLE_COSTS"]["TREASURE_TROVE_COVE"],
@@ -78,6 +86,7 @@ class MODIFICATION_PROCESS_CLASS():
             config_data["WORLD_PUZZLE_COSTS"]["GRUNTILDA_FIGHT"],
             config_data["WORLD_PUZZLE_COSTS"]["DOUBLE_HEALTH"]
         ])
+        print("Setting Note Door Costs...")
         assembly_object.set_note_door_values(note_door_list=[
             config_data["NOTE_DOOR_COSTS"]["50_NOTE_DOOR"],
             config_data["NOTE_DOOR_COSTS"]["180_NOTE_DOOR"],
@@ -92,6 +101,7 @@ class MODIFICATION_PROCESS_CLASS():
             config_data["NOTE_DOOR_COSTS"]["864_NOTE_DOOR"],
             config_data["NOTE_DOOR_COSTS"]["882_NOTE_DOOR"]
         ])
+        print("Setting Transformation Costs...")
         assembly_object.set_transformation_costs(transformation_cost_list=[
             config_data["TRANSFORMATION_COSTS"][BK_CONSTANTS.TERMITE],
             config_data["TRANSFORMATION_COSTS"][BK_CONSTANTS.CROCODILE],

@@ -5,7 +5,7 @@
     "SKIP_JIGGY_JIG": true,
     "ENABLE_FALLPROOF": true,
     "ENABLE_EXIT_TO_WITCHS_LAIR": true,
-    "START_GAME_WITH_ALL_MOVES":true,
+    "START_GAME_WITH_ALL_MOVES": true,
     "WORLD_PUZZLE_COSTS": {
         "MUMBOS_MOUNTAIN": 0,
         "TREASURE_TROVE_COVE": 0,

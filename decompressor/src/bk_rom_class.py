@@ -368,7 +368,7 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
     ##### POST FUNCTIONS #####
     ##########################
 
-    def rename_bk_rom(self, bk_rom_name:str="BK N64 Rando v3"):
+    def rename_bk_rom(self, bk_rom_name:str="BKDecompressor"):
         '''
         Renames the string at the beginning of the Banjo-Kazooie ROM file.
         '''
