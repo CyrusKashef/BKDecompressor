@@ -60,6 +60,15 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         if(not os.path.exists(BK_CONSTANTS.EXTRACTED_FILES_DIR)):
             os.mkdir(BK_CONSTANTS.EXTRACTED_FILES_DIR)
         print(f"INFO: _create_extracted_files_directory: Creation complete!")
+        
+    def _create_custom_files_directory(self):
+        '''
+        Creates a custom files directory.
+        '''
+        print(f"INFO: _create_custom_files_directory: Creating custom files directory...")
+        if(not os.path.exists(BK_CONSTANTS.CUSTOM_FILES_DIR)):
+            os.mkdir(BK_CONSTANTS.CUSTOM_FILES_DIR)
+        print(f"INFO: _create_custom_files_directory: Creation complete!")
 
     ################################
     ##### EXTRACT & DECOMPRESS #####

@@ -37,6 +37,8 @@ class MODIFICATION_PROCESS_CLASS():
         Extracts the assets and assembly files
         '''
         self._bk_rom = BK_ROM_CLASS(old_rom_path)
+        self._bk_rom._create_extracted_files_directory()
+        self._bk_rom._create_custom_files_directory()
         self._bk_rom.clear_extracted_files_dir(BK_CONSTANTS.BIN_EXTENSION)
         self._bk_rom.extract_asset_table_pointers()
         self._bk_rom.extract_assembly_files()
