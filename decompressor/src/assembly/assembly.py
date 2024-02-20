@@ -1,6 +1,6 @@
 '''
 Purpose:
-*
+* Class to handle assembly modifications
 '''
 
 ###################

@@ -44,7 +44,7 @@ parser.add_argument(
     "-a",
     "--action",
     choices=["extract", "compile"],
-    default="compile",
+    default=default_option,
     help=("extract:\n" + \
           "  * Takes all files out of the ROM.\n" + \
           "  * Files that were compressed will be decompressed and will end in '-Decompressed.bin'.\n" + \
@@ -59,9 +59,8 @@ parser.add_argument(
 args = parser.parse_args()
 modification_process_obj = MODIFICATION_PROCESS_CLASS()
 if(args.action == "extract"):
-    modification_process_obj._extract_decompress_files(args.originalromfile)
+    modification_process_obj._extract_decompress_files(original_rom_path)
 elif(args.action == "compile"):
-    new_rom_file:str = args.newromfile
-    if(args.newromfile == ""):
-        new_rom_file:str = (args.originalromfile).replace(".z64", "-NEW.z64")
-    modification_process_obj._insert_compress_files(args.originalromfile, new_rom_file)
+    if(new_rom_path == ""):
+        new_rom_path:str = (original_rom_path).replace(".z64", "-NEW.z64")
+    modification_process_obj._insert_compress_files(original_rom_path, new_rom_path)

@@ -1,3 +1,9 @@
+'''
+Purpose:
+* Class of constants used in this program
+* Makes it easier to find and import constant values without typos
+'''
+
 class BK_CONSTANTS:
     ASSET_TABLE_START_INDEX:int = 0x5E98
     ASSET_TABLE_END_INDEX:int = 0x10CC8

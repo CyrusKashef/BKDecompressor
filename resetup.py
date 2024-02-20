@@ -1,3 +1,9 @@
+'''
+Purpose:
+* Removes the previous package for the BK Decompressor
+* Creates the package for the BK Decompressor
+'''
+
 import shutil
 import subprocess
 

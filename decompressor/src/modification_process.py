@@ -41,7 +41,8 @@ class MODIFICATION_PROCESS_CLASS():
     
     def _run_config_features(self):
         '''
-        Pass
+        Reads the configuration file and runs additional
+        features based on user settings.
         '''
         with open(BK_CONSTANTS.CONFIG_FILE_PATH) as json_file:
             config_data:dict = json.load(json_file)
@@ -111,6 +112,7 @@ class MODIFICATION_PROCESS_CLASS():
         Appends asset files and inserts assembly files
         '''
         self._bk_rom = BK_ROM_CLASS(old_rom_path)
+        self._bk_rom.obtain_assembly_files()
         self._run_config_features()
         self._bk_rom.append_asset_table_pointers()
         self._bk_rom.insert_assembly_files()
@@ -118,6 +120,10 @@ class MODIFICATION_PROCESS_CLASS():
         self._bk_rom.calculate_new_crc()
         self._bk_rom.save_as_new_rom(new_rom_path)
         self._bk_rom.clear_extracted_files_dir(BK_CONSTANTS.COMPRESSED_BIN_EXTENSION)
+
+################
+##### MAIN #####
+################
 
 if __name__ == '__main__':
     with open(BK_CONSTANTS.CONFIG_FILE_PATH) as json_file:

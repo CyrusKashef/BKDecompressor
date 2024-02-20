@@ -1,5 +1,6 @@
 '''
 Purpose:
+* Creates the package for the BK Decompressor
 '''
 
 ###################

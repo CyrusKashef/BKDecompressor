@@ -1,6 +1,6 @@
 '''
 Purpose:
-* Class for running the compression and decompression algorithms on files.
+* Class for running the compression and decompression algorithms on files
 '''
 
 ###################

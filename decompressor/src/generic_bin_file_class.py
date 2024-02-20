@@ -1,5 +1,7 @@
 '''
 Purpose:
+* Parent class for bin files
+* Contains generic functions for reading, modifying, and saving
 '''
 
 ###################

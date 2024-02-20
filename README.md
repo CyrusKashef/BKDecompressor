@@ -7,7 +7,7 @@
 
 In a terminal from the BKDecompressor folder, run the following:
 
-> python3 -m pip install -r requirements.txt
+> python -m pip install -r requirements.txt
 
 > python setup.py install
 
@@ -46,8 +46,8 @@ example: C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\
 
 example: C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\bkdecompressor_cli.py
 
-Passible Arguments:
-  - Actions (-a, --actions)
+-a, --actions (Optional)
+By default, actions checks if extracted_files directory exists. If it does not exist, run extract. If it does, run compile.
     - extract
       - Takes all files out of the ROM
       - Files that were compressed will be decompressed and will end in '-Decompressed.bin'

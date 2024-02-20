@@ -43,6 +43,7 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         '''
         super().__init__(file_path)
         self._create_extracted_files_directory()
+        self._create_custom_files_directory()
         # Variables
         self._append_address:int = BK_CONSTANTS.ROM_END_INDEX
         self._assembly_file_list:list = []
@@ -55,19 +56,21 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         '''
         Creates an extracted files directory.
         '''
-        print(f"INFO: _create_extracted_files_directory: Creating extracted files directory...")
+        print(f"INFO: _create_extracted_files_directory: Checking for extracted files directory...")
         if(not os.path.exists(BK_CONSTANTS.EXTRACTED_FILES_DIR)):
             os.mkdir(BK_CONSTANTS.EXTRACTED_FILES_DIR)
-        print(f"INFO: _create_extracted_files_directory: Creation complete!")
+            print(f"INFO: _create_extracted_files_directory: Extracted files directory created!")
+        print(f"INFO: _create_extracted_files_directory: Extracted files directory already exists.")
         
     def _create_custom_files_directory(self):
         '''
         Creates a custom files directory.
         '''
-        print(f"INFO: _create_custom_files_directory: Creating custom files directory...")
+        print(f"INFO: _create_custom_files_directory: Checking for custom files directory...")
         if(not os.path.exists(BK_CONSTANTS.CUSTOM_FILES_DIR)):
             os.mkdir(BK_CONSTANTS.CUSTOM_FILES_DIR)
-        print(f"INFO: _create_custom_files_directory: Creation complete!")
+            print(f"INFO: _create_custom_files_directory: Custom files directory created!")
+        print(f"INFO: _create_custom_files_directory: Custom files directory already exists.")
 
     ################################
     ##### EXTRACT & DECOMPRESS #####
@@ -168,6 +171,19 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
             data_file_name:str = self._extract_and_decompress_section(data_address, end_address)
             self._assembly_file_list.append((start_address, end_address, code_file_name, data_file_name, asm_name))
         print(f"INFO: extract_assembly_files: Extracting complete!")
+
+    def obtain_assembly_files(self):
+        '''
+        Pass
+        '''
+        print(f"INFO: obtain_assembly_files: Obtaining assembly files...")
+        assembly_address_list:list = self._obtain_assembly_address_list()
+        for start_address, end_address, asm_name in assembly_address_list:
+            data_address:int = self._file_content.find(BK_CONSTANTS.BK_COMPRESSED_FILE_HEADER + b"\x00", start_address + 1, end_address)
+            code_file_name:str = self._convert_int_to_hex_str(start_address)
+            data_file_name:str = self._convert_int_to_hex_str(data_address)
+            self._assembly_file_list.append((start_address, end_address, code_file_name, data_file_name, asm_name))
+        print(f"INFO: obtain_assembly_files: Obtaining assembly files complete!")
 
     #####################################
     ##### COMPRESSION AND INSERTION #####
