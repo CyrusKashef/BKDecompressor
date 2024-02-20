@@ -1,0 +1,43 @@
+{
+    "DISABLE_ANTI_TAMPERING": true,
+    "PATCH_YUM_YUM_CRASH_FIX": true,
+    "BOOT_TO_FILE_SELECT": true,
+    "SKIP_JIGGY_JIG": true,
+    "ENABLE_FALLPROOF": true,
+    "ENABLE_EXIT_TO_WITCHS_LAIR": true,
+    "START_GAME_WITH_ALL_MOVES":true,
+    "WORLD_PUZZLE_COSTS": {
+        "MUMBOS_MOUNTAIN": 0,
+        "TREASURE_TROVE_COVE": 0,
+        "CLANKERS_CAVERN": 0,
+        "BUBBLEGLOOP_SWAMP": 0,
+        "FREEZEEZY_PEAK": 0,
+        "GOBIS_VALLEY": 0,
+        "MAD_MONSTER_MANSION": 0,
+        "RUSTY_BUCKET_BAY": 0,
+        "CLICK_CLOCK_WOOD": 0,
+        "GRUNTILDA_FIGHT": 0,
+        "DOUBLE_HEALTH": 0
+    },
+    "NOTE_DOOR_COSTS": {
+        "50_NOTE_DOOR": 0,
+        "180_NOTE_DOOR": 0,
+        "260_NOTE_DOOR": 0,
+        "350_NOTE_DOOR": 0,
+        "450_NOTE_DOOR": 0,
+        "640_NOTE_DOOR": 0,
+        "765_NOTE_DOOR": 0,
+        "810_NOTE_DOOR": 0,
+        "828_NOTE_DOOR": 0,
+        "846_NOTE_DOOR": 0,
+        "864_NOTE_DOOR": 0,
+        "882_NOTE_DOOR": 0
+    },
+    "TRANSFORMATION_COSTS": {
+        "TERMITE": 0,
+        "CROCODILE": 0,
+        "WALRUS": 0,
+        "PUMPKIN": 0,
+        "BEE": 0
+    }
+}
