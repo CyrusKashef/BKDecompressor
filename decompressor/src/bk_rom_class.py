@@ -27,7 +27,6 @@ import os
 
 from decompressor.src.generic_bin_file_class import Generic_Bin_File_Class
 from decompressor.src.compression_class import COMPRESSION_CLASS
-
 from decompressor.src.bk_constants import BK_CONSTANTS
 
 ########################

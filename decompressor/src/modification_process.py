@@ -10,16 +10,11 @@ ToDo:
 ##### IMPORTS #####
 ###################
 
-# import argparse
 import json
 
 from decompressor.src.bk_rom_class import BK_ROM_CLASS
 from decompressor.src.bk_constants import BK_CONSTANTS
 from decompressor.src.assembly.assembly import ASSEMBLY_CLASS
-
-####################
-##### ARGPARSE #####
-####################
 
 ######################################
 ##### MODIFICATION PROCESS CLASS #####
@@ -111,10 +106,11 @@ class MODIFICATION_PROCESS_CLASS():
         ])
         assembly_object.save_all_assembly_changes()
     
-    def _insert_compress_files(self, new_rom_path:str):
+    def _insert_compress_files(self, old_rom_path:str, new_rom_path:str):
         '''
         Appends asset files and inserts assembly files
         '''
+        self._bk_rom = BK_ROM_CLASS(old_rom_path)
         self._run_config_features()
         self._bk_rom.append_asset_table_pointers()
         self._bk_rom.insert_assembly_files()
@@ -124,8 +120,10 @@ class MODIFICATION_PROCESS_CLASS():
         self._bk_rom.clear_extracted_files_dir(BK_CONSTANTS.COMPRESSED_BIN_EXTENSION)
 
 if __name__ == '__main__':
-    old_rom_path:str = "C:/Users/Cyrus/Documents/VS_Code/BKDecompressor/BKDecompressor/Banjo-Kazooie.z64"
-    new_rom_path:str = "C:/Users/Cyrus/Documents/VS_Code/BKDecompressor/BKDecompressor/Banjo-Kazooie-NEW.z64"
+    with open(BK_CONSTANTS.CONFIG_FILE_PATH) as json_file:
+        config_data:dict = json.load(json_file)
+    original_rom_path:str = config_data["ORIGINAL_ROM_PATH"]
+    new_rom_path:str = config_data["NEW_ROM_PATH"]
     modification_process_obj = MODIFICATION_PROCESS_CLASS()
-    modification_process_obj._extract_decompress_files(old_rom_path)
-    modification_process_obj._insert_compress_files(new_rom_path)
+    modification_process_obj._extract_decompress_files(original_rom_path)
+    modification_process_obj._insert_compress_files(original_rom_path, new_rom_path)

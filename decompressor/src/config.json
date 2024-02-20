@@ -1,4 +1,6 @@
 {
+    "ORIGINAL_ROM_PATH": "Banjo-Kazooie.z64",
+    "NEW_ROM_PATH": "Banjo-Kazooie-NEW.z64",
     "DISABLE_ANTI_TAMPERING": true,
     "PATCH_YUM_YUM_CRASH_FIX": true,
     "BOOT_TO_FILE_SELECT": true,
