@@ -38,7 +38,8 @@ Adjust the file located at .\decompressor\src\config.json
 
 \path\to\python3.exe \path\to\decompressor\src\modification_process.py
 
-> example: C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\modification_process.py
+example:
+> C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\modification_process.py
 
 ## Command Line Run
 
