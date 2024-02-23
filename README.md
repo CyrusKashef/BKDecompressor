@@ -18,8 +18,8 @@ Adjust the file located at .\decompressor\src\config.json
     - Relative Path Examples:
       - Root Folder: Banjo-Kazooie.z64
       - Decompressor Folder: .\decompressor\Banjo-Kazooie.z64
-  - Absolute Path Example:
-    - C:\Users\Cyrus\Documents\VS_Code\BKDecompressor\BKDecompressor\Banjo-Kazooie.z64
+    - Absolute Path Example:
+      - C:\Users\Cyrus\Documents\VS_Code\BKDecompressor\BKDecompressor\Banjo-Kazooie.z64
   - NEW_ROM_PATH: Where do you want your new ROM to save to?
     - Same formatting as ORIGINAL_ROM_PATH
     - If left blank, will use ORIGINAL_ROM_PATH, but replace the end with '-NEW'
@@ -38,22 +38,23 @@ Adjust the file located at .\decompressor\src\config.json
 
 \path\to\python3.exe \path\to\decompressor\src\modification_process.py
 
-example: C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\modification_process.py
+> example: C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\modification_process.py
 
 ## Command Line Run
 
 \path\to\python3.exe \path\to\decompressor\src\bkdecompressor_cli.py
 
-example: C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\bkdecompressor_cli.py
+example:
+> C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\python.exe .\decompressor\src\bkdecompressor_cli.py
 
 -a, --actions (Optional)
 By default, actions checks if extracted_files directory exists. If it does not exist, run extract. If it does, run compile.
-    - extract
-      - Takes all files out of the ROM
-      - Files that were compressed will be decompressed and will end in '-Decompressed.bin'
-      - Files that were decompressed by default will end in '-Raw.bin'
-    - compile
-      - For every file extracted, checks if there's a replacement in 'custom_files'
-      - Replacement files must have exact same naming as original file
-      - All assets get appended to the back of the ROM
-      - All assembly files get inserted back to their original location
+  - extract
+    - Takes all files out of the ROM
+    - Files that were compressed will be decompressed and will end in '-Decompressed.bin'
+    - Files that were decompressed by default will end in '-Raw.bin'
+  - compile
+    - For every file extracted, checks if there's a replacement in 'custom_files'
+    - Replacement files must have exact same naming as original file
+    - All assets get appended to the back of the ROM
+    - All assembly files get inserted back to their original location
