@@ -17,7 +17,7 @@ packages = find_packages(exclude=["BKDecompressor.egg-info", "build", "dist"])
 
 setup(
     name="BKDecompressor",
-    version="0.0.1",
+    version="0.0.2",
     description='None',
     # url='None',
     author='GiantJigglypuff3',
